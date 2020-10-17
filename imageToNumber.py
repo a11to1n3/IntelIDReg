@@ -21,7 +21,7 @@ class processing_image():
     self.img = img
 
   def pre_process(self, thresh, thresh_filter):
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
     edges_foreground = cv2.bilateralFilter(gray, 9, thresh_filter, thresh_filter)
     (_, blackAndWhiteImage) = cv2.threshold(edges_foreground, thresh, 200, cv2.THRESH_BINARY)
     return blackAndWhiteImage
