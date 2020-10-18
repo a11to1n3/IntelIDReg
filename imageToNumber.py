@@ -19,6 +19,7 @@ class processing_image():
   def __init__(self,folder,filename):
     img = cv2.imread(os.path.join(folder,filename))
     self.img = img
+    print(os.path.join(folder,filename))
 
   def pre_process(self, thresh, thresh_filter):
     gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
